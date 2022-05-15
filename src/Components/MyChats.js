@@ -1,3 +1,4 @@
+
 import { AddIcon } from "@chakra-ui/icons";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
@@ -22,11 +23,14 @@ const MyChats = ({ fetchAgain }) => {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
-      };
-      console.log("Till config")
-      const { data } = await axios.get("/api/chat", config);
-      setChats(data);
+      }
+      
+      // http://localhost:5000/
+      const { data } = await axios.get("api/chat", config);
+
+      setChats(data)
     } catch (error) {
+  
       toast({
         title: "Error Occured!",
         description: "Failed to Load the chats $$",
@@ -126,4 +130,5 @@ const MyChats = ({ fetchAgain }) => {
 };
 export default MyChats;
 
+// "http://127.0.0.1:5000/"
 

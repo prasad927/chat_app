@@ -1,12 +1,12 @@
+
 export const isSameSenderMargin = (messages, m, i, userId) => {
-    // console.log(i === messages.length - 1);
 
     if (
         i < messages.length - 1 &&
         messages[i + 1].sender._id === m.sender._id &&
         messages[i].sender._id !== userId
     )
-        return 33;
+        return 33;  
     else if (
         (i < messages.length - 1 &&
             messages[i + 1].sender._id !== m.sender._id &&
@@ -16,10 +16,12 @@ export const isSameSenderMargin = (messages, m, i, userId) => {
         return 0;
     else return "auto";
 };
-
+  
+                            // m-->current msg i-->idx of m  userId-->loged in user id
 export const isSameSender = (messages, m, i, userId) => {
     return (
         i < messages.length - 1 &&
+        // check for next msg have same sinder or not 
         (messages[i + 1].sender._id !== m.sender._id ||
             messages[i + 1].sender._id === undefined) &&
         messages[i].sender._id !== userId

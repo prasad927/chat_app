@@ -105,6 +105,7 @@ const GroupChatModal = ({ children }) => {
                 },
                 config
             );
+            
             setChats([data, ...chats]);
             onClose();
             toast({

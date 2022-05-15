@@ -13,8 +13,9 @@ const ChatProvider = ({ children }) => {
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo")); //get user form localstorage that we
-                                                                    //added from login/signup time
+                                                            //added from login/signup time
     setUser(userInfo);
+    // console.log("USer info : ",userInfo)
 
     if (!userInfo){
          navigate("/");  //redirect to login page
